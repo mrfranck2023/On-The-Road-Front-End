@@ -7,13 +7,13 @@ import "./Sidebar.css";
 import { NavLink } from 'react-router-dom';
 
 
-const Sidebar = () => {
+const Sidebar = ({handleChange}) => {
     return (
         <>
             <section className='sidebar'>
-                <Category />
-                <Price />
-                <Colors />
+                <Category handleChange={handleChange}/>
+                <Price handleChange={handleChange}/>
+                <Colors handleChange={handleChange}/>
             </section>
         </>
     );

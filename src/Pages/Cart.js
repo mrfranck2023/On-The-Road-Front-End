@@ -8,7 +8,7 @@ const Cart = ({ cart, removeItemFromCart, increaseQuantity, decreaseQuantity, ca
 
     return (
         <div>
-        <Header cartCount={cartCount}/>
+        <Header cartCount={cartCount} estVisible={false}/>
         <BodyCart cart={cart} removeItemFromCart={removeItemFromCart} increaseQuantity={increaseQuantity} decreaseQuantity={decreaseQuantity}/>
         <Footer />
         </div>

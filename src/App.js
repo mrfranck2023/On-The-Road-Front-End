@@ -1,38 +1,19 @@
-// import React, { Component, useState } from 'react';
-// import './App.css';
-// import { BrowserRouter, Routes, Route } from 'react-router-dom';
-// import Home from './Pages/Home';
-// import Dashboard from './Pages/Dashboard/Dashboard';
-// import FormPropVehiculesDashboard from './Pages/Dashboard/FormPropVehiculesDashboard';
-// import Cart from './Pages/Cart';
-
-// class App extends Component {
-//   render() {
-  
-//     return (
-//       <BrowserRouter> 
-//       <Routes>
-//           {/* <Route path='/' element={<Login/>}></Route> */}
-//           {/* <Route path='/register' element={<Login/>}></Route> */}
-//           <Route path='/' element={<Home />}></Route>
-//           <Route path='/dashboard' element={<Dashboard/>}></Route>
-//           <Route path='/form-prop-vehicules' element={<FormPropVehiculesDashboard/>}></Route>
-//           <Route path='/cart' element={<Cart/>}></Route>
-//       </Routes>
-//   </BrowserRouter>
-//     );
-//   }
-// }
-
-// export default App;
 import React, { useState } from 'react';
-import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 import Home from './Pages/Home';
+import Login from './Pages/Login-Register/Login';
+
 import Dashboard from './Pages/Dashboard/Dashboard';
-import FormPropVehiculesDashboard from './Pages/Dashboard/FormPropVehiculesDashboard';
+import GestionDeStock from './Pages/Dashboard/Stock/GestionDeStock'
+import AjoutDeStock from './Pages/Dashboard/Stock/AjoutDeStock'
+
 import Cart from './Pages/Cart';
 import Shop from './Pages/Shop/Shop';
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Register from './Pages/Login-Register/Register';
 
 const App = () => {
   const [cart, setCart] = useState([]);
@@ -58,6 +39,7 @@ const App = () => {
         return [...prevCart, product];
       }
     });
+    toast.success(`Votre article a été ajouté au panier !`);
   };
 
 
@@ -85,10 +67,14 @@ const App = () => {
       <Routes>
         <Route path='/' element={<Home addToCart={addToCart} cartCount={total} />}></Route>
         <Route path='/dashboard' element={<Dashboard />}></Route>
-        <Route path='/form-prop-vehicules' element={<FormPropVehiculesDashboard />}></Route>
         <Route path='/cart' element={<Cart cart={cart} removeItemFromCart={removeItemFromCart} increaseQuantity={increaseQuantity} decreaseQuantity={decreaseQuantity} cartCount={total}/>}></Route>
-        <Route path='/shop' element={<Shop cartCount={total}/>}></Route>
+        <Route path='/shop' element={<Shop cartCount={total} addToCart={addToCart}/>}></Route>
+        <Route path='/login' element={<Login />}></Route>
+        <Route path='/register' element={<Register />}></Route>
+        <Route path='/gestion-stock' element={<GestionDeStock />}></Route>
+        <Route path='/ajout-stock' element={<AjoutDeStock />}></Route>
       </Routes>
+      <ToastContainer />
     </BrowserRouter>
   );
 };

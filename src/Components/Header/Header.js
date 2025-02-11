@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import styles from "../assets/css/style.module.css"
 
 
-const Header = ({ cartCount }) => {
+const Header = ({ cartCount , handleInputChange, estVisible }) => {
     return (
         <div className={styles["Header"]}>
             <header className={`${styles["header"]} ${styles["data-header"]}`}>
@@ -46,13 +46,14 @@ const Header = ({ cartCount }) => {
                             <li className={styles["navbar-item"]}>
                                 <NavLink to="/" className={styles["navbar-link"]}>Contact</NavLink>
                             </li>
-                            
+                            {estVisible ? (
                             <li className={styles["navbar-item"]}>
 
                                 <div className='nav-container'>
-                                    <input type="text" className='search-input' placeholder='Chercher un véhicule'/>
+                                    <input type="text" className='search-input' placeholder='Chercher un véhicule' onChange={handleInputChange}/>
                                 </div>
                             </li>
+                            ) : ( <li> <div> </div> </li>)}
 
                         </ul>
 

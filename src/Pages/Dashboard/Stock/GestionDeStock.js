@@ -1,13 +1,12 @@
 import React from 'react';
-import BodyFormPropVehiculesDashboard from './BodyFormPropVehiculesDashboard';
+import BodyGestionStock from './BodyGestionStock';
 
 
-import HeaderDashboard from './HeaderDashboard';
-import SidebarDashboard from './SidebarDashboard';
-
-const FormPropVehiculesDashboard = () => {
+import HeaderDashboard from '../HeaderDashboard';
+import SidebarDashboard from '../SidebarDashboard';
+const GestionDeStock = () => {
     return (
-        <div className="body">
+        <div>
 
         {/* ======= Header ======= */}
         <HeaderDashboard />
@@ -18,7 +17,7 @@ const FormPropVehiculesDashboard = () => {
         {/* End Sidebar*/}
   
         {/* ======= Body ======= */}
-        <BodyFormPropVehiculesDashboard />
+        <BodyGestionStock />
         {/* End Body*/}
   
   
@@ -32,4 +31,4 @@ const FormPropVehiculesDashboard = () => {
     );
 };
 
-export default FormPropVehiculesDashboard;
+export default GestionDeStock;

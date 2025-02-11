@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import "../assets/css/cart.css"
+import { NavLink } from 'react-router-dom';
+
 
 const BodyCart = ({ cart, removeItemFromCart, increaseQuantity, decreaseQuantity }) => {
   // Fonction pour calculer le prix total du panier
@@ -64,7 +66,9 @@ const BodyCart = ({ cart, removeItemFromCart, increaseQuantity, decreaseQuantity
                       <button className="btnn btn-black btn-sm btn-block">Update Cart</button>
                     </div> */}
                     <div className="col-md-6">
-                      <button className="btnn btn-outline-black btn-sm btn-block">Continue Shopping</button>
+                      <NavLink to="/shop" >
+                        <button className="btnn btn-outline-black btn-sm btn-block">Continue Shopping</button>
+                      </NavLink>
                     </div>
                   </div>
                   <div className="row">

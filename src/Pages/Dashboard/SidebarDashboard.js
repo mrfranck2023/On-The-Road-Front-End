@@ -183,14 +183,9 @@ const SidebarDashboard = () => {
       </li> */}
                     {/* End Icons Nav */}
                     <li className="nav-heading">Gestion Clientèle</li>
-                    {/* <li className="nav-item">
-        <a className="nav-link collapsed" href="users-profile.html">
-          <i className="bi bi-person" />
-          <span>Profile</span>
-        </a>
-      </li> */}
+                   
                     {/* End Profile Page Nav */}
-                    <li className="nav-item">
+                    {/* <li className="nav-item">
                         <a className="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
                             <i className="bi bi-bar-chart" /><span>Marketing</span><i className="bi bi-chevron-down ms-auto" />
                         </a>
@@ -206,54 +201,36 @@ const SidebarDashboard = () => {
                                 </a>
                             </li>
                         </ul>
-                    </li>
-                    {/* End Marketing Nav */}
-                    {/* <li className="nav-item">
-        <a className="nav-link collapsed" href="pages-faq.html">
-          <i className="bi bi-question-circle" />
-          <span>F.A.Q</span>
-        </a>
-      </li> */}
-                    {/* End F.A.Q Page Nav */}
-                    {/* <li className="nav-item">
-        <a className="nav-link collapsed" href="pages-contact.html">
-          <i className="bi bi-envelope" />
-          <span>Contact</span>
-        </a>
-      </li> */}
+                    </li> */}
+                        <ul id="charts-nav" className="nav-content">
+                            <li>
+                                <NavLink to="/form-prop-vehicules">
+                                    <i className="bi bi-circle" /><span>Clients</span>
+                                </NavLink>
+                            </li>
+                            {/* <li>
+                                <a href="charts-apexcharts.html">
+                                    <i className="bi bi-circle" /><span>Nouveautés</span>
+                                </a>
+                            </li> */}
+                        </ul>
+                    
                     {/* End Contact Page Nav */}
-                    <li className="nav-item">
+                    {/* <li className="nav-item">
                         <a className="nav-link collapsed" href="pages-register.html">
                             <i className="bi bi-card-list" />
                             <span>Attribuer Des Réductions</span>
                         </a>
-                    </li>{/* End Register Page Nav */}
-                    {/* <li className="nav-item">
-        <a className="nav-link collapsed" href="pages-login.html">
-          <i className="bi bi-box-arrow-in-right" />
-          <span>Login</span>
-        </a>
-      </li> */}
+                    </li> */}
+                    {/* End Register Page Nav */}
+                   
                     {/* End Login Page Nav */}
-                    {/* <li className="nav-item">
-        <a className="nav-link collapsed" href="pages-error-404.html">
-          <i className="bi bi-dash-circle" />
-          <span>Error 404</span>
-        </a>
-      </li> */}
-                    {/* End Error 404 Page Nav */}
-                    {/* <li className="nav-item"> */}
-                    {/* <a className="nav-link collapsed" href="pages-blank.html"> */}
-                    {/* <i className="bi bi-file-earmark" /> */}
-                    {/* <span>Blank</span> */}
-                    {/* </a> */}
-                    {/* </li> */}
-                    <li className="nav-heading">Gestion Du Stock</li>
+                   
+                    <li className="nav-heading">Boutique</li>
                     <li className="nav-item">
-                        <a className="nav-link collapsed" href="pages-faq.html">
-                            <i className="bi bi-question-circle" />
-                            <span>Magasin</span>
-                        </a>
+                        <NavLink className="nav-link" to="/gestion-stock">   
+                        <i className="bi bi-question-circle" /><span>Gestion du stock</span>
+                        </NavLink>
                     </li>
                     {/* End Blank Page Nav */}
                 </ul>

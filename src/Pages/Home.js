@@ -9,7 +9,7 @@ const Home = ({ addToCart, cartCount }) => {
 
     return (
       <div>
-        <Header cartCount={cartCount} />
+        <Header cartCount={cartCount} estVisible={false}/>
         <Body addToCart={addToCart} />
         <Footer />
       </div>

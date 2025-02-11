@@ -8,7 +8,7 @@ import BodyDashboard from './BodyDashboard';
 
 const Dashboard = () => {
   return (
-    <div className="body">
+    <div >
 
       {/* ======= Header ======= */}
       <HeaderDashboard />
