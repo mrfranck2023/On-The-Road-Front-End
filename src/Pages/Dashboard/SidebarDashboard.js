@@ -204,7 +204,7 @@ const SidebarDashboard = () => {
                     </li> */}
                         <ul id="charts-nav" className="nav-content">
                             <li>
-                                <NavLink to="/form-prop-vehicules">
+                                <NavLink to="/gestion-clients">
                                     <i className="bi bi-circle" /><span>Clients</span>
                                 </NavLink>
                             </li>

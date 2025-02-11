@@ -11,9 +11,12 @@ import AjoutDeStock from './Pages/Dashboard/Stock/AjoutDeStock'
 import Cart from './Pages/Cart';
 import Shop from './Pages/Shop/Shop';
 
+import Register from './Pages/Login-Register/Register';
+import Clients from './Pages/Dashboard/Clients/Clients';
+
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Register from './Pages/Login-Register/Register';
+import PaymentPage from './Pages/Payment/PaymentPage';
 
 const App = () => {
   const [cart, setCart] = useState([]);
@@ -73,6 +76,8 @@ const App = () => {
         <Route path='/register' element={<Register />}></Route>
         <Route path='/gestion-stock' element={<GestionDeStock />}></Route>
         <Route path='/ajout-stock' element={<AjoutDeStock />}></Route>
+        <Route path='/gestion-clients' element={<Clients />}></Route>
+        <Route path='/paiement' element={<PaymentPage />}></Route>
       </Routes>
       <ToastContainer />
     </BrowserRouter>

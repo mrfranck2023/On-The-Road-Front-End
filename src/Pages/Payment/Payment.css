@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+* {
+    box-sizing: border-box;
+}
+.fullscreen-div {
+    width: 100vw;  /* Prend 100% de la largeur de la fenêtre */
+    height: 100vh; /* Prend 100% de la hauteur de la fenêtre */
+    background-color: rgb(238, 238, 238);  /* Juste pour ajouter un fond visible */
+}
+
+.im1{    
+    background-image: url("../../Components/assets/images/orange-om.png");
+    background-size: cover; /* Ajuste l'image pour couvrir toute la zone */
+    background-position: center; /* Centre l'image horizontalement et verticalement */
+    background-repeat: no-repeat; /* Empêche la répétition */
+    width: 60%; /* Largeur du conteneur */
+    height: 30px;
+    cursor: pointer;
+}
+
+
+.im2{
+    background-image: url("../../Components/assets/images/momo.jpeg");
+    background-size: cover; /* Ajuste l'image pour couvrir toute la zone */
+    background-position: center; /* Centre l'image horizontalement et verticalement */
+    background-repeat: no-repeat; /* Empêche la répétition */
+    width: 60%; /* Largeur du conteneur */
+    height: 30px;
+    cursor: pointer;
+}
+.boite{
+
+    transition: box-shadow 0.3s ease-in-out; /* Animation fluide */
+    align-items: center;
+}
+
+.boite:hover{
+    border: 2px solid transparent; /* Bordure initiale */
+}
+/* .im3{
+    background-image: url();
+} */
+
+
+.parent-bloc{
+    
+    max-width: 800px;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+.container h1{
+    color: RGB(177, 218, 64);
+    font-weight:bolder;
+    font-family: "Lexend", serif;
+    font-optical-sizing: auto;
+    font-style: italic;
+    /* margin-top: 100px; */
+}
+
+h2{
+    color: #77C3A5;
+    font-weight: 500;
+    font-family: "Lexend", serif;
+    font-optical-sizing: auto;
+}
+
+.bloc{
+    background-color: white;
+    padding: 20px;
+    max-height: 100vh; /* Limite la hauteur du bloc à 100% de la fenêtre */
+    overflow-y: auto;  
+}
+
+
+.bloc form {
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.bloc .mb-3 {
+    margin-bottom: 10px;
+}
+
+.bloc input, .bloc .form-label {
+    font-size: 14px;
+}
+
+.bloc h2 {
+    font-size: 18px;
+}
+
+.bloc .form-label {
+    font-size: 12px;
+}
+

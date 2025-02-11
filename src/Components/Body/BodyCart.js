@@ -111,7 +111,9 @@ const BodyCart = ({ cart, removeItemFromCart, increaseQuantity, decreaseQuantity
         
                       <div className="row">
                         <div className="col-md-12">
-                          <button className="btnn btn-black btn-lg py-3 btn-block">Proceed To Checkout</button>
+                          <NavLink to="/paiement">
+                            <button className="btnn btn-black btn-lg py-3 btn-block">Procéder Au Payement</button>
+                          </NavLink>
                         </div>
                       </div>
                     </div>
