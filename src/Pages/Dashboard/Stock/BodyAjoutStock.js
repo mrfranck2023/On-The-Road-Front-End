@@ -1,10 +1,30 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import { NavLink } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom';
 
 
 const BodyAjoutStock = () => {
-    
+    const [make, setMake] = useState()
+    const [model, setModel] = useState()
+    const [price, setPrice] = useState()
+    const [type, setType] = useState("CAR")
+    const [hasStorage, setHasStorage] = useState("true")
+    const [numDoors, setNumDoors] = useState(4)
+    const [fuelType, setFuelType] = useState("Gasoline")
+    const navigate = useNavigate()
+
+    function addVehicule(event)
+    {
+        event.preventDefault()
+        axios.post("http://localhost:8080/api/vehicles", {type, make, model, price, fuelType, numDoors, hasStorage})
+        .then(res=>{
+            navigate("/gestion-stock")
+            console.log("on y est");
+        })
+        .catch(err=>console.log(err))
+    }
+
     return (
         <>
             <main id="main" className="main">
@@ -33,22 +53,34 @@ const BodyAjoutStock = () => {
                                                 </NavLink >
                                             </div>
                                             <br />
-                                            <form action="">
+                                            <form action=""  onSubmit={addVehicule}>
                                             <table className="table table-borderless datatable">
                                                 <thead>
                                                     <tr>
+                                                        <th scope="col">Type</th>
                                                         <th scope="col">Marque</th>
                                                         <th scope="col">Modèle</th>
                                                         <th scope="col">Prix</th>
+                                                        <th scope="col">FuelType</th>
+                                                        <th scope="col">Nombre de porte</th>
+                                                        <th scope="col">Est stocké</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                         <tr >
-                                                            <td><input type="text" class="form-control" id="" name="marque"/></td>
-                                                            <td><input type="text" class="form-control" id="" name="modele"/></td>
-                                                            <td><input type="text" class="form-control" id="" name="prix"/></td>
+                                                            <td><input type="text" class="form-control" placeholder="CAR OU SCOOTER" id="" name="type" onChange={e=>setType(e.target.value)}/></td>
+                                                            <td><input type="text" class="form-control" id="" name="marque" onChange={e=>setMake(e.target.value)}/></td>
+                                                            <td><input type="text" class="form-control" id="" name="modele" onChange={e=>setModel(e.target.value)}/></td>
+                                                            <td><input type="number" class="form-control" id="" name="prix" onChange={e=>setPrice(e.target.value)}/></td>
+                                                            <td><input type="text" class="form-control" id="" name="fueltype" onChange={e=>setFuelType(e.target.value)}/></td>
+                                                            <td><input type="number" class="form-control" id="" name="numdoors" onChange={e=>setNumDoors(e.target.value)}/></td>
+                                                            <td><input type="text" class="form-control" placeholder="true ou false" id="" name="isstorage" onChange={e=>setHasStorage(e.target.value)}/></td>
                                                         </tr>
                                                         <tr >
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
                                                             <td></td>
                                                             <td></td>
                                                             <td><div class="d-grid gap-2"><button type="submit" class="btn btn-primary">Ajouter</button></div></td>

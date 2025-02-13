@@ -6,13 +6,36 @@ import data from "../../../db/data_dashboard";
 const itemsPerPage = 5; // Nombre d'éléments par page
 
 const BodyGestionStock = () => {
+    
+    const [dataVehicules, setDataVehicules] = useState([]);
+    
+    useEffect(() => {
+        const fetchListeVehicules = async () => {
+            const response = await axios.get('http://localhost:8080/api/vehicles');
+            setDataVehicules(response.data.vehicles);
+            console.log("jdjeodjeodjeodjeodjeoje");
+            console.log(response.data.vehicles);
+            console.log("diejdiejdiejdiejdiejiej");
+        };
+        
+        fetchListeVehicules();
+
+        const interval = setInterval(() => {
+            
+        }, 1000); // Exécute la fonction toutes les 1000 millisecondes (1 seconde)
+        
+        //Fonction de nettoyage pour arrêter l'intervalle lorsque le composant est démonté
+        return () => clearInterval(interval);
+        
+    }, []);
+
     const [currentPage, setCurrentPage] = useState(1);
-    const totalPages = Math.ceil(data.length / itemsPerPage);
+    const totalPages = Math.ceil(dataVehicules.length / itemsPerPage);
 
     // Déterminer les éléments à afficher
     const startIndex = (currentPage - 1) * itemsPerPage;
-    const currentItems = data.slice(startIndex, startIndex + itemsPerPage);  
 
+    const currentItems = dataVehicules.slice(startIndex, startIndex + itemsPerPage);  
 
     return (
         <>
@@ -47,6 +70,7 @@ const BodyGestionStock = () => {
                                                 <thead>
                                                     <tr>
                                                         <th scope="col">Id</th>
+                                                        <th scope="col">Type</th>
                                                         <th scope="col">Marque</th>
                                                         <th scope="col">Modèle</th>
                                                         <th scope="col">Prix</th>
@@ -58,8 +82,9 @@ const BodyGestionStock = () => {
                                                 {currentItems.map((vehicule, index) => (
                                                     <tr vehicule={index}>
                                                         <th scope="row"><a href="#">#{vehicule.id}</a></th>
-                                                        <td>{vehicule.marque}</td>
-                                                        <td><a href="#" className="text-primary">{vehicule.modele}</a></td>
+                                                        <td>{vehicule.type}</td>
+                                                        <td>{vehicule.make}</td>
+                                                        <td><a href="#" className="text-primary">{vehicule.model}</a></td>
                                                         <td>{vehicule.price}</td>
                                                         <td><button type="button" class="btn btn-warning">Modifier</button></td>
                                                         <td><button type="button" class="btn btn-danger">Supprimer</button></td>
